@@ -1,0 +1,67 @@
+class Animal {
+    String name;
+
+    Animal(String name) {
+        this.name = name;
+    }
+
+    void makeSound() {
+        System.out.println("Животное издает звук");
+    }
+
+    void eat() {
+        System.out.println(name + " ест пищу");
+    }
+}
+
+class Dog extends Animal {
+    Dog(String name) {
+        super(name);
+    }
+
+    @Override
+    void makeSound() {
+        System.out.println(name + " лает: Гав-гав!");
+    }
+
+    void wagTail() {
+        System.out.println(name + " виляет хвостом");
+    }
+}
+
+class Cat extends Animal {
+    Cat(String name) {
+        super(name);
+    }
+
+    @Override
+    void makeSound() {
+        System.out.println(name + " мяукает: Мяу!");
+    }
+
+    void purr() {
+        System.out.println(name + " мурлычет");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal genericAnimal = new Animal("Неизвестное животное");
+        genericAnimal.makeSound();
+        genericAnimal.eat();
+
+        System.out.println();
+
+        Dog dog = new Dog("Бобик");
+        dog.makeSound();
+        dog.eat();
+        dog.wagTail();
+
+        System.out.println();
+
+        Cat cat = new Cat("Мурка");
+        cat.makeSound();
+        cat.eat();
+        cat.purr();
+    }
+}
